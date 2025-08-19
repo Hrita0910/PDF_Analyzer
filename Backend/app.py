@@ -13,7 +13,7 @@ app = FastAPI(
 # Enable CORS for React + Vite frontend
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173" , "https://pdf-analyze-rose.vercel.app" , "http://localhost:8080"],  # or "*" in dev
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
