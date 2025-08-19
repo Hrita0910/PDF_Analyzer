@@ -1,7 +1,6 @@
 version: "3.9"
 
 services:
-  # 1. The Python Backend Service (FastAPI)
   backend:
     build:
       context: ./Backend
@@ -11,7 +10,6 @@ services:
       - "8000:8000"
     restart: unless-stopped
 
-  # 2. The Node.js Features Service (Express.js)
   features:
     build:
       context: ./Features
@@ -19,24 +17,22 @@ services:
     container_name: pdf_insighter_features
     ports:
       - "5000:5000"
-    # This will pass environment variables from a .env file in the root directory
-    # or from your shell, which is needed for the API keys.
     environment:
       - GEMINI_API_KEY=${GEMINI_API_KEY}
       - AZURE_SPEECH_KEY=${AZURE_SPEECH_KEY}
       - AZURE_SPEECH_REGION=${AZURE_SPEECH_REGION}
     restart: unless-stopped
 
-  # 3. The React Frontend Service (Served by Nginx)
   frontend:
     build:
       context: ./Frontend
       dockerfile: Dockerfile
+      # This 'args' section is required to pass the key during the build
+      args:
+        - ADOBE_EMBED_API_KEY=${VITE_ADOBE_CLIENT_ID_LH} # Corrected to use the localhost key
     container_name: pdf_insighter_frontend
     ports:
-      # Maps port 8080 on your machine to port 80 in the Nginx container.
       - "8080:80"
-    # Ensures the backends start before the frontend.
     depends_on:
       - backend
       - features
