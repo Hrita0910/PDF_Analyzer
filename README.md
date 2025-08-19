@@ -102,6 +102,8 @@ touch .env
 Add the following configuration to your `.env` file:
 
 ```env
+VITE_ADOBE_CLIENT_ID_LH=628c0718047f4a0eaaccc8a09c8e3130
+
 # Google Gemini API Configuration
 GEMINI_API_KEY=your_gemini_api_key_here
 
