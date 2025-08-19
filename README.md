@@ -127,7 +127,7 @@ This command will:
 - Start all containers in the correct order
 - Establish inter-service networking
 
-> **⏰ First Run**: Initial build may take 10-15 minutes due to large ML libraries. Subsequent runs will be much faster thanks to Docker caching.
+> **⏰ First Run**: Initial build may take 15-20 minutes due to large ML libraries. Subsequent runs will be much faster thanks to Docker caching.
 
 #### 4. Access the Application
 Once all services are running, open your browser and navigate to:
