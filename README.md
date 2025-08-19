@@ -98,7 +98,7 @@ cd PDF_Analyzer
 Create a `.env` file in the project root directory:
 
 ```bash
-touch .env
+New-Item -Path .env -ItemType File
 ```
 
 Add the following configuration to your `.env` file:
