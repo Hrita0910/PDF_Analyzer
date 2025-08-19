@@ -104,10 +104,10 @@ Add the following configuration to your `.env` file:
 ```env
 VITE_ADOBE_CLIENT_ID_LH=628c0718047f4a0eaaccc8a09c8e3130
 
-# Google Gemini API Configuration
-GEMINI_API_KEY=your_gemini_api_key_here
+# Google Gemini API Configuration (from Google AI Studio)
+GEMINI_API_KEY=your_gemini_api_key_here 
 
-# Microsoft Azure Text-to-Speech Configuration
+# Microsoft Azure Text-to-Speech Configuration (from portal.azure.com -> create a resource for Speech)
 AZURE_SPEECH_KEY=your_azure_tts_key_here
 AZURE_SPEECH_REGION=your_azure_region_here
 ```
@@ -155,73 +155,14 @@ Once all services are running, open your browser and navigate to:
 | Backend | 8000 | FastAPI server with ML models |
 | Features | 3000 | AI and TTS service endpoints |
 
-## 🛠️ Development
-
-### Local Development Setup
-```bash
-# Frontend
-cd frontend
-npm install
-npm run dev
-
-# Backend
-cd backend
-pip install -r requirements.txt
-uvicorn app:app --host 0.0.0.0 --port 8000
-
-# Features Service
-cd features
-npm install
-node server.js
-```
 
 ### Project Structure
 ```
 PDF_Analyzer/
-├── frontend/           # React application
-├── backend/           # Python FastAPI service
-├── features/          # Node.js AI/TTS service
+├── Frontend/           # React application
+├── Backend/           # Python FastAPI service
+├── Features/          # Node.js AI/TTS service
 ├── docker-compose.yml # Container orchestration
 ├── .env              # Environment configuration
 └── README.md         # This file
 ```
-
-## 🔧 Troubleshooting
-
-### Common Issues
-
-**Docker Build Fails**
-- Ensure Docker Desktop is running
-- Check available disk space (>5GB recommended)
-- Try `docker system prune` to free up space
-
-**API Keys Not Working**
-- Verify `.env` file is in the root directory
-- Check API key validity and permissions
-- Ensure no extra spaces in the `.env` file
-
-**Application Not Loading**
-- Wait for all containers to fully start (check `docker-compose logs`)
-- Verify port 8080 is not in use by another application
-- Try `docker-compose down && docker-compose up --build`
-
-### Getting Help
-If you encounter issues:
-1. Check the container logs: `docker-compose logs [service-name]`
-2. Verify all services are running: `docker-compose ps`
-3. Review the `.env` file configuration
-
-## 📄 License
-
-This project was developed for the Adobe India Hackathon 2025. Please refer to the hackathon terms and conditions for usage rights.
-
-## 🙏 Acknowledgments
-
-- **Adobe** for the PDF Embed API and hosting the hackathon
-- **Google** for the Gemini AI API
-- **Microsoft Azure** for Text-to-Speech services
-- **Hugging Face** for the Sentence-Transformers library
-
----
-
-**Built with ❤️ for Adobe India Hackathon 2025**
