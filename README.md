@@ -167,12 +167,12 @@ npm run dev
 # Backend
 cd backend
 pip install -r requirements.txt
-uvicorn main:app --reload
+python app.py
 
 # Features Service
 cd features
 npm install
-npm start
+node server.js
 ```
 
 ### Project Structure
