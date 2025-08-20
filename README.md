@@ -185,6 +185,24 @@ Once all services are running, open your browser and navigate to:
 | Backend | 8000 | FastAPI server with ML models |
 | Features | 3000 | AI and TTS service endpoints |
 
+## 🛠️ Development
+
+### Local Development Setup
+```bash
+# Frontend
+cd Frontend
+npm install
+npm run dev
+
+# Backend
+cd Backend
+python app.py
+
+# Features Service
+cd Features
+npm install
+node server.js
+```
 
 ### Project Structure
 ```
