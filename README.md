@@ -95,6 +95,33 @@ cd PDF_Analyzer
 ```
 
 #### 2. Configure Environment Variables
+Create a `.env` file in the Features folder:
+
+```bash
+New-Item -Path Features\.env -ItemType File
+```
+Add the following configuration to your `.env` file:
+
+```env
+# Google Gemini API Configuration (From Google AI Studio)
+GEMINI_API_KEY=your_gemini_api_key_here 
+
+# Microsoft Azure Text-to-Speech Configuration (From portal.azure.com -> create a resource for Speech -> Go to Manage Keys)
+AZURE_SPEECH_KEY=your_azure_tts_key_here
+AZURE_SPEECH_REGION=your_azure_region_here
+```
+Create a `.env` file in the Frontend folder:
+
+```bash
+New-Item -Path Frontend\.env -ItemType File
+```
+Add the following configuration to your `.env` file:
+
+```env
+VITE_ADOBE_CLIENT_ID_LH=628c0718047f4a0eaaccc8a09c8e3130   
+VITE_ADOBE_CLIENT_ID_PROD=16a2f3d7661744c2a79e2f6283c1c8d5 
+```
+
 Create a `.env` file in the project root directory:
 
 ```bash
@@ -105,6 +132,7 @@ Add the following configuration to your `.env` file:
 
 ```env
 VITE_ADOBE_CLIENT_ID_LH=628c0718047f4a0eaaccc8a09c8e3130
+VITE_ADOBE_CLIENT_ID_PROD=16a2f3d7661744c2a79e2f6283c1c8d5
 
 # Google Gemini API Configuration (From Google AI Studio)
 GEMINI_API_KEY=your_gemini_api_key_here 
