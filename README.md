@@ -106,10 +106,10 @@ Add the following configuration to your `.env` file:
 ```env
 VITE_ADOBE_CLIENT_ID_LH=628c0718047f4a0eaaccc8a09c8e3130
 
-# Google Gemini API Configuration (from Google AI Studio)
+# Google Gemini API Configuration (From Google AI Studio)
 GEMINI_API_KEY=your_gemini_api_key_here 
 
-# Microsoft Azure Text-to-Speech Configuration (from portal.azure.com -> create a resource for Speech -> Go to Manage Keys)
+# Microsoft Azure Text-to-Speech Configuration (From portal.azure.com -> create a resource for Speech -> Go to Manage Keys)
 AZURE_SPEECH_KEY=your_azure_tts_key_here
 AZURE_SPEECH_REGION=your_azure_region_here
 ```
